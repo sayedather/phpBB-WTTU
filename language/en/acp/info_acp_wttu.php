@@ -51,5 +51,10 @@ $lang = array_merge($lang, array(
 	'WTTU_BBCODE_EXPLAIN'			=> 'This option will enable link to thread in BB code format',
 	'WTTU_HTML_ENABLE'				=> 'Enable HTML',
 	'WTTU_HTML_EXPLAIN'				=> 'This option will enable link to thread in HTML format',
+	'WTTU_TYPE'						=> 'Type of URL',
+	'WTTU_TYPE_EXPLAIN'				=> 'Select Which Type of URL do you want<br /><a href="http://www.marketing-jive.com/2009/05/what-is-canonical-url.html" target="_blank">What is a canonical url?</a>',
+	'SIMPLE'						=> 'Simple',
+	'CANONICAL'						=> 'Canonical',
+	
 	
 ));

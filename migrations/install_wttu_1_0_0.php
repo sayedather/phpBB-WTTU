@@ -29,6 +29,7 @@ class install_wttu_1_0_0 extends \phpbb\db\migration\migration
 			array('config.add', array('wttu_link', 1)),
 			array('config.add', array('wttu_bbcode', 1)),
 			array('config.add', array('wttu_html', 1)),
+			array('config.add', array('wttu_type', 1)),
 			array('config.add', array('wttu_version', '1.0.0')),
 
 			array('module.add', array(

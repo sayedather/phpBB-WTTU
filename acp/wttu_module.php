@@ -40,6 +40,7 @@ class wttu_module
 			$config->set('wttu_link', $request->variable('wttu_link', 0));
 			$config->set('wttu_bbcode', $request->variable('wttu_bbcode', 0));
 			$config->set('wttu_html', $request->variable('wttu_html', 0));
+			$config->set('wttu_type', $request->variable('wttu_type', 0));
 			
 			trigger_error($user->lang['WTTU_SAVED'] . adm_back_link($this->u_action));
 		}
@@ -49,6 +50,7 @@ class wttu_module
 			'WTTU_LINK_ENABLED'		=> (!empty($this->config['wttu_link'])) ? true : false,
 			'WTTU_BBCODE_ENABLED'		=> (!empty($this->config['wttu_bbcode'])) ? true : false,
 			'WTTU_HTML_ENABLED'		=> (!empty($this->config['wttu_html'])) ? true : false,
+			'WTTU_TYPE'		=> (!empty($this->config['wttu_type'])) ? true : false,
 			'U_ACTION'		=> $this->u_action,
 		));
 	}

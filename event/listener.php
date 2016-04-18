@@ -92,11 +92,16 @@ class listener implements EventSubscriberInterface
         $row = $event['row'];
 		$postrow = $event['post_row'];		
 		$forum_id = (int) $row['forum_id'];
+		
+		$canon_url = append_sid(generate_board_url() . '/viewtopic.' . $this->php_ext, 't=' . $event['topic_id']);	
+		$simple_url = append_sid(generate_board_url() . '/viewtopic.' . $this->php_ext, 'f=' . $event['forum_id'] . '&amp;t=' . $event['topic_id']);
+
+		$share_url = !$this->config['wttu_type'] ? $canon_url : $simple_url;
 	
 		$this->template->assign_vars(array(
-		'WTTU_LINK' 	=> append_sid(generate_board_url() . '/viewtopic.' . $this->php_ext, 'f=' . $event['forum_id'] . '&amp;t=' . $event['topic_id']),
-		'WTTU_BBCODE'	=> append_sid(generate_board_url() . '/viewtopic.' . $this->php_ext, 'f=' . $event['forum_id'] . '&amp;t=' . $event['topic_id']),
-		'WTTU_HTML'		=> htmlentities('<a href="' . append_sid(generate_board_url() . "/viewtopic.$this->php_ext", 'f=' . $event['forum_id'] . '&t=' . $event['topic_id'] . '">')),
+		'WTTU_LINK' 	=> $share_url,
+		'WTTU_BBCODE'	=> $share_url,
+		'WTTU_HTML'		=> htmlentities('<a href="' . $share_url . '">'),
 		));
     } 
 }
